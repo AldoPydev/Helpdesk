@@ -11,7 +11,7 @@ class Tickets extends Controller
      */
     public function index()
     {
-        //
+        return view("crud.index");
     }
 
     /**
@@ -19,7 +19,7 @@ class Tickets extends Controller
      */
     public function create()
     {
-        //
+        return view("crud.create");
     }
 
     /**
