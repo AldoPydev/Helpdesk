@@ -1,5 +1,7 @@
 <?php
 
+/* CREACION DE LA TABLA TICKETS */
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,8 +14,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tickets', function (Blueprint $table) {
+            // CAMPOS DE TABLA
             $table->id();
-            $table->timestamps();
+            $table->timestamps(); //Campo de creación y actualización del registro
             $table->string("empleado");
             $table->integer("alumno");
             $table->string("medio");

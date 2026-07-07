@@ -1,5 +1,7 @@
 <?php
 
+// Controlador de tickets
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,7 +12,9 @@ class Tickets extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
+        // Llamar el index de inicio para la vista
         return view("crud.index");
     }
 
@@ -19,6 +23,7 @@ class Tickets extends Controller
      */
     public function create()
     {
+        // Llamar el form de crear para la vista
         return view("crud.create");
     }
 
