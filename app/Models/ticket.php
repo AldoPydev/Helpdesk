@@ -12,19 +12,21 @@ class ticket extends Model
 
     protected $fillable = [
         // Campos de la tabla requeridos en orden
-        'created_at',
+        //'created_at',
+        //'updated_at',
         'empleado',
         'alumno',
         'medio',
         'seccion',
         'solicitud',
-        'categoria',
         'area',
+        'lugar',
+        'categoria',
         'responsable',
         'atendido',
         'descripcion',
-        'solicitud',
+        'solucion',
         'evidencia',
-        'ipdated_at',
+        
     ];
 }

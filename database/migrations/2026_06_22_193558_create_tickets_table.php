@@ -22,8 +22,9 @@ return new class extends Migration
             $table->string("medio");
             $table->string("seccion");
             $table->string("solicitud");
-            $table->string("categoria");
             $table->string("area");
+            $table->string("lugar");
+            $table->string("categoria");
             $table->string("responsable");
             $table->string("atendio");
             $table->string("descripcion");

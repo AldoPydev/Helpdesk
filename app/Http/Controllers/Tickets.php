@@ -11,11 +11,13 @@ class Tickets extends Controller
     /**
      * Display a listing of the resource.
      */
+    
     public function index()
 
     {
         // Llamar el index de inicio para la vista
-        return view("crud.index");
+        //$tickets = Tickets::all();
+        //return view("crud.index", compact("tickets"));
     }
 
     /**
@@ -32,7 +34,8 @@ class Tickets extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Tickets::create($request->all());
+        return redirect()->route("ticket.index")->with('Ticket, creado con exito');
     }
 
     /**

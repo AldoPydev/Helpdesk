@@ -6,8 +6,9 @@
             <div class="col">
                 <h2>Nuevo ticket</h2>
                 <!-- Creación de formulario con metodo POST -->
-                <form action="" class="needs-validation" novalidate method="post" >
+                <form action="{{route("ticket.store")}}" class="needs-validation" novalidate method="post" >
                     @csrf <!-- Genera un campo oculto con el token -->
+                    @method("post") <!-- metodo POST -->
                     <div class="row">
                         <div class="col">
                             <!-- Campo empleado que solicita -->
@@ -27,7 +28,7 @@
                             <!-- Campo medio de solicitud -->
                             <div class="mb-3">
                                 <label for="Via de solicitud">Medio de solicitud *</label>
-                                <select class="form-select" id="viaSolicitud" required>
+                                <select class="form-select" id="medio" name="medio" required>
                                 <option selected>Selecciona una opción</option>
                                 <option value="1">Celular | Smartphone</option>
                                 <option value="2">Sitio web</option>
@@ -45,7 +46,7 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="Via de solicitud">Sección *</label>
-                                <select class="form-select" id="viaSolicitud" required>
+                                <select class="form-select" id="seccion" name="seccion" required>
                                     <option selected>Selecciona una opción</option>
                                     <option value="1">Preescolar | Kinder</option>
                                     <option value="2">Primaria | Elementary School</option>
@@ -59,7 +60,7 @@
                             <!-- Campo tipo de solicitud -->
                             <div class="mb-3">
                                 <label for="Via de solicitud">Tipo de solicitud *</label>
-                                <select class="form-select" id="viaSolicitud" required>
+                                <select class="form-select" id="solicitud" name="solicitud" required>
                                     <option selected>Selecciona una opción</option>
                                     <option value="1">Requerimiento | Requeriment</option>
                                     <option value="2">Asesoramiento | Assistance</option>
@@ -71,7 +72,7 @@
                             <div class="mb-3">
                                 <!-- Campo Area de apoyo -->
                                 <label for="Via de solicitud">Area de apoyo*</label>
-                                <select class="form-select" id="viaSolicitud" required>
+                                <select class="form-select" id="area" name="area" required>
                                 <option selected>Selecciona una opción</option>
                                 <option value="1">CMI | Library</option>
                                 <option value="2">Deportes | Sport</option>
@@ -89,7 +90,7 @@
                             <div class="mb-3">
                                 <!-- Campo donde se apoyo -->
                                 <label for="Via de solicitud">Lugar de apoyo*</label>
-                                <select class="form-select" id="viaSolicitud" required>
+                                <select class="form-select" id="lugar" name="lugar" required>
                                 <option selected>Selecciona una opción</option>
                                 <option value="1">Audiovisual | Audiovisual Room</option>
                                 <option value="2">Auditorio | Auditorium</option>
@@ -114,7 +115,7 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="empleado" class="formn-label">Categoría*</label>
-                                <select class="form-select" id="viaSolicitud" required>
+                                <select class="form-select" id="categoria" name="categoria" required>
                                 <option selected>Selecciona una opción</option>
                                 <option value="1">Algebraix | Académico</option>
                                 <option value="2">Algebraix | Administrativo</option>
@@ -153,20 +154,20 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="alumno" class="formn-label">Responsable de area</label>
-                                <input type="text" name="matricula" id="matricula" class="form-control">
+                                <input type="text" name="matricula" id="responsable" name="responsable" class="form-control">
                             </div>
                         </div>
                         <div class="col">
                             <div class="mb-3">
                                 <label for="alumno" class="formn-label">Atendido por *</label>
-                                <input type="text" name="matricula" id="matricula" class="form-control">
+                                <input type="text" name="matricula" id="atendido" name="atendido" class="form-control" required>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-md-12">
                         <label for="description">Descripción <span class="fw-bold text-danger required-asterisk">*</span></label>
-                        <textarea class="form-control " id="description" name="description" rows="5" style="resize: none;" required=""></textarea>
+                        <textarea class="form-control " id="description" name="description" rows="5" style="resize: none;" required></textarea>
                     </div>
                     <div class="col-md-12">
                         <label for="solution">Solución <small class="text-primary">(Si ya hay una solución)</small></label>
@@ -175,12 +176,12 @@
                     <div class="mb-3">
                         <div class="col-md-12">
                             <label for="attachments">Archivos adjuntos</label>
-                            <input type="file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.xml,.ppt,.pptx,.txt" class="form-control " id="attachments" name="attachments[]" multiple="">
+                            <input type="file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.xml,.ppt,.pptx,.txt" class="form-control " id="attachments" name="evidencia" multiple="">
                         </div>
                     </div>
 
                     <button class="btn btn-success mt-3" type="submit">Guardar</button>
-
+                    <a href="{{route("ticket.index")}}" class="btn btn-danger mt-sm-3">Cancelar</a>
                 </form>
             </div>
         </div>
